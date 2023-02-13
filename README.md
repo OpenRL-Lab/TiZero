@@ -15,6 +15,10 @@ Reinforcement learning agent for Google Research Football.
 Code accompanying the paper 
 "TiZero: Mastering Multi-Agent Football with Curriculum Learning and Self-Play" (AAMAS 2023). [paper(soon)] [[videos](https://www.youtube.com/watch?v=U9REh0otmVU)]. 
 
+<div align="center">
+<img height="300px" height="auto" src="./docs/figures/football_trueskill.png">
+</div>
+
 ### 2.Submit TiZero to JIDI(及第评测平台)
 
 <div align="center">
