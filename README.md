@@ -39,10 +39,10 @@ We provide two agents under `./submission/` directory:
 Please cite our paper if you use our codes or our weights in your own work:
 
 ```
-@inproceedings{fanqi2023tizero,
-    title={TiZero: Mastering Multi-Agent Football with Curriculum Learning and Self-Play},
-    author={Fanqi Lin, Shiyu Huang, Tim Pearce, Wenze Chen and Wei-Wei Tu},
-    booktitle={Proceedings of the 22nd International Conference on Autonomous Agents and MultiAgent Systems},
-    year={2023}
+@article{lin2023tizero,
+  title={TiZero: Mastering Multi-Agent Football with Curriculum Learning and Self-Play},
+  author={Lin, Fanqi and Huang, Shiyu and Pearce, Tim and Chen, Wenze and Tu, Wei-Wei},
+  journal={arXiv preprint arXiv:2302.07515},
+  year={2023}
 }
 ```
