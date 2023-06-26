@@ -25,20 +25,13 @@ from setuptools import setup
 def get_install_requires() -> list:
     return [
         "setuptools>=67.0",
-        "gymnasium",
+        "psutil",
+        "wheel",
         "click",
         "termcolor",
-        "gym",
-        "torch",
-        "treevalue",
-        "rich",
-        "wandb",
-        "seaborn",
-        "jsonargparse",
-        "imageio",
-        "opencv-python",
-        "pygame",
-        "mujoco",
+        "tabulate",
+        "lz4",
+        "six",
         "tqdm",
     ]
 
@@ -53,7 +46,6 @@ def get_extra_requires() -> dict:
             "black",
             "ruff",
             "gpustat",
-            "gym-super-mario-bros",
         ],
         "dev": ["build", "twine"],
     }
@@ -79,7 +71,7 @@ setup(
     entry_points={"console_scripts": ["tizero=tizero.cli.cli:run"]},
     project_urls={
         "Code": "https://github.com/OpenRL-Lab/TiZero",
-        "Documentation": "https://openrl-docs.readthedocs.io/zh/latest/",
+        "Documentation": "https://tizero.readthedocs.io/",
     },
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -93,11 +85,7 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
     ],
-    keywords=(
-        "reinforcement-learning multi-agent "
-        "reinforcement-learning-algorithms pytorch machine-learning "
-        "baselines toolbox python data-science gym gymnasium"
-    ),
+    keywords="reinforcement-learning multi-agent google research football",
     python_requires=">=3.8",
     install_requires=get_install_requires(),
     extras_require=get_extra_requires(),

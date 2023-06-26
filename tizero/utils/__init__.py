@@ -15,23 +15,3 @@
 # limitations under the License.
 
 """"""
-
-
-__TITLE__ = "tizero"
-__VERSION__ = "v0.0.1"
-__DESCRIPTION__ = "Toolkit and Agents for Google Research Football"
-__AUTHOR__ = "OpenRL Contributors"
-__EMAIL__ = "huangshiyu@4paradigm.com"
-__version__ = __VERSION__
-
-import platform
-
-python_version_list = list(map(int, platform.python_version_tuple()))
-assert python_version_list >= [
-    3,
-    8,
-    0,
-], (
-    "OpenRL requires Python 3.8 or newer, but your Python is"
-    f" {platform.python_version()}"
-)

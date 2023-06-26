@@ -7,11 +7,12 @@
 </div>
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
+[![PyPI](https://img.shields.io/pypi/v/tizero)](https://pypi.org/project/tizero/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tizero)
 [![Documentation Status](https://readthedocs.org/projects/tizero/badge/?version=latest)](https://tizero.readthedocs.io/en/latest/?badge=latest)
 
 
-### 1.Introduction
+### Introduction
 
 Reinforcement learning agent for Google Research Football.
 
@@ -22,7 +23,21 @@ Code accompanying the paper
 <img height="300px" height="auto" src="./docs/figures/football_trueskill.png">
 </div>
 
-### 2.Submit TiZero to JIDI(及第评测平台)
+### Installation
+
+- Follow the instructions in [gfootball](https://github.com/google-research/football#on-your-computer) to set up the environment.
+- `pip install gfootball`
+- `pip install tizero` (or clone this repo and `pip install -e .`).
+- test the installation by `python3 -m gfootball.play_game --action_set=full`.
+
+### Convert dump file to video
+
+After the installation, you can use tizero to convert a dump file to a video file.
+You can download an example dump file from [here](http://jidiai.cn/daily_6484285/daily_6484285.dump). 
+And then execute `tizero --tool dump2video --input daily_6484285.dump --output ./` in your terminal.
+Wait a minute, you will get a video file named `daily_6484285.avi` in your current directory.
+
+### Submit TiZero to JIDI(及第评测平台)
 
 <div align="center">
 <img height="400px" height="auto" src="./docs/figures/jidi.png">
@@ -37,7 +52,7 @@ We provide two agents under `./submission/` directory:
 - `./submission/random_agent`: the random agent for JIDI submission.
 
 
-### 3.Cite
+### Cite
 
 Please cite our paper if you use our codes or our weights in your own work:
 
