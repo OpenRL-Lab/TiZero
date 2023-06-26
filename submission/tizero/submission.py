@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright 2023 The TARTRL Authors.
+# Copyright 2023 The OpenRL Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,11 +25,11 @@ import torch
 base_dir = Path(__file__).resolve().parent
 sys.path.append(str(base_dir))
 
-from tartrl_policy import PolicyNetwork
-from tartrl_utils import tartrl_obs_deal, _t2n
+from openrl_policy import PolicyNetwork
+from openrl_utils import openrl_obs_deal, _t2n
 from goal_keeper import agent_get_action
 
-class TARTRLAgent():
+class OpenRLAgent():
     def __init__(self):
         rnn_shape = [1,1,1,512]
         self.rnn_hidden_state = [np.zeros(rnn_shape, dtype=np.float32) for _ in range (11)]
@@ -44,13 +44,13 @@ class TARTRLAgent():
             re_action[0][re_action_index] = 1
             return re_action
 
-        tartrl_obs = tartrl_obs_deal(raw_obs)
+        openrl_obs = openrl_obs_deal(raw_obs)
 
-        obs = tartrl_obs['obs']
+        obs = openrl_obs['obs']
         obs = np.concatenate(obs.reshape(1, 1, 330))
         rnn_hidden_state = np.concatenate(self.rnn_hidden_state[idx])
         avail_actions = np.zeros(20)
-        avail_actions[:19] = tartrl_obs['available_action']
+        avail_actions[:19] = openrl_obs['available_action']
         avail_actions = np.concatenate(avail_actions.reshape([1, 1, 20]))
         with torch.no_grad():
             actions, rnn_hidden_state = self.model(obs, rnn_hidden_state, available_actions=avail_actions, deterministic=True)
@@ -63,7 +63,7 @@ class TARTRLAgent():
 
         return re_action
 
-agent = TARTRLAgent()
+agent = OpenRLAgent()
 
 def my_controller(obs_list, action_space_list, is_act_continuous=False):
     idx = obs_list['controlled_player_index'] % 11

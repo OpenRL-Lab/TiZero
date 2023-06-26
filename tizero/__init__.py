@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright 2022 The OpenRL Authors.
+# Copyright 2023 The OpenRL Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,24 +15,24 @@
 # limitations under the License.
 
 """"""
-import numpy as np
 
-class RandomAgent():
-    def __init__(self):
-        pass
-    def get_action(self,raw_obs):
-        return np.eye(19)[np.random.choice(19, 1)].tolist()
 
-agent = RandomAgent()
 
-def my_controller(obs_list, action_space_list, is_act_continuous=False):
-    del obs_list['controlled_player_index']
-    return agent.get_action(obs_list)
+__TITLE__ = "tizero"
+__VERSION__ = "v0.0.1"
+__DESCRIPTION__ = "Toolkit and Agents for Google Research Football"
+__AUTHOR__ = "OpenRL Contributors"
+__EMAIL__ = "huangshiyu@4paradigm.com"
+__version__ = __VERSION__
 
-def jidi_controller(obs_list = None):
-    if obs_list is None:
-        return
-    re = my_controller(obs_list,None)
-    assert isinstance(re,list)
-    assert isinstance(re[0],list)
-    return re
+import platform
+
+python_version_list = list(map(int, platform.python_version_tuple()))
+assert python_version_list >= [
+    3,
+    8,
+    0,
+], (
+    "OpenRL requires Python 3.8 or newer, but your Python is"
+    f" {platform.python_version()}"
+)
