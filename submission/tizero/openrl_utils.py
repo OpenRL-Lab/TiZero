@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright 2023 The TARTRL Authors.
+# Copyright 2023 The OpenRL Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -76,7 +76,7 @@ def get_direction_action(available_action, sticky_actions, forbidden_action, tar
             available_action[RELEASE_SPRINT] = 1
     return available_action
 
-def tartrl_obs_deal(obs):
+def openrl_obs_deal(obs):
 
     direction_x_bound = 0.03
     direction_y_bound = 0.02
