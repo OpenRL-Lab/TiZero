@@ -33,8 +33,10 @@ Code accompanying the paper
 ### Convert dump file to video
 
 After the installation, you can use tizero to convert a dump file to a video file.
+The usage is `tizero dump2video <dump_file> <output_dir> --episode_length <the length> --render_type <2d/3d>`.
+
 You can download an example dump file from [here](http://jidiai.cn/daily_6484285/daily_6484285.dump). 
-And then execute `tizero --tool dump2video --input daily_6484285.dump --output ./` in your terminal.
+And then execute `tizero dump2video daily_6484285.dump ./` in your terminal. By default, the episode length is 3000 and the render type is 2d.
 Wait a minute, you will get a video file named `daily_6484285.avi` in your current directory.
 
 ### Submit TiZero to JIDI(及第评测平台)
@@ -46,7 +48,7 @@ Wait a minute, you will get a video file named `daily_6484285.avi` in your curre
 
 JIDI is a public evaluation platform for RL agents. You can submit your agent of GRF at: [http://www.jidiai.cn/env_detail?envid=34](http://www.jidiai.cn/env_detail?envid=34).
 
-We provide two agents under `./submission/` directory:
+We provide several agents under `./submission/` directory,  which can be submitted to JIDI directly:
 
 - `./submission/tizero`: the final model of TiZero for JIDI submission, which ranked 1st on October 28th, 2022.
 - `./submission/random_agent`: the random agent for JIDI submission.

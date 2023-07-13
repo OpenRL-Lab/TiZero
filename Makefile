@@ -24,3 +24,9 @@ format:
     # do format agent
 	isort ${PYTHON_FILES}
 	black ${PYTHON_FILES} --preview
+
+pypi-test-upload:
+	twine upload dist/* -r testpypi
+
+pypi-upload:
+	twine upload dist/*

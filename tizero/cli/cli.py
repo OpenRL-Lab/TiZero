@@ -56,7 +56,7 @@ def print_system_info(
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
 
-@click.command(context_settings=CONTEXT_SETTINGS)
+@click.group(invoke_without_command=True)
 @click.option(
     "--version",
     is_flag=True,
@@ -73,28 +73,17 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
     is_eager=True,
     help="Show system information.",
 )
-@click.option(
-    "--tool",
-    prompt="Choose a tool to use",
-    type=click.Choice(
-        [
-            "dump2video",
-        ]
-    ),
-    help="tool name",
-)
-@click.option(
-    "--input",
-    prompt="Please enter input file path or directory",
-    type=str,
-    help="input file path or directory",
-)
-@click.option(
-    "--output",
-    prompt="Please enter output file path or directory",
-    type=str,
-    help="output file path or directory",
-)
+@click.pass_context
+def run(ctx):
+    if ctx.invoked_subcommand is None:
+        pass
+    else:
+        pass
+
+
+@run.command()
+@click.argument("input")
+@click.argument("output")
 @click.option(
     "--episode_length",
     type=int,
@@ -112,15 +101,12 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
     default="2d",
     help="render type",
 )
-def run(tool: str, input: str, output: str, episode_length: int, render_type: str):
-    if tool == "dump2video":
-        from tizero.cli.dump2video import dump2video
+def dump2video(input: str, output: str, episode_length: int, render_type: str):
+    from tizero.cli.dump2video import dump2video
 
-        dump2video(
-            input=input,
-            output=output,
-            episode_length=episode_length,
-            render_type=render_type,
-        )
-    else:
-        raise NotImplementedError
+    dump2video(
+        input=input,
+        output=output,
+        episode_length=episode_length,
+        render_type=render_type,
+    )
