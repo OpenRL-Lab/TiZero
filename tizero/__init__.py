@@ -18,7 +18,7 @@
 
 
 __TITLE__ = "tizero"
-__VERSION__ = "v0.0.1"
+__VERSION__ = "v0.0.2"
 __DESCRIPTION__ = "Toolkit and Agents for Google Research Football"
 __AUTHOR__ = "OpenRL Contributors"
 __EMAIL__ = "huangshiyu@4paradigm.com"
@@ -32,6 +32,6 @@ assert python_version_list >= [
     8,
     0,
 ], (
-    "OpenRL requires Python 3.8 or newer, but your Python is"
+    "tizero requires Python 3.8 or newer, but your Python is"
     f" {platform.python_version()}"
 )
