@@ -18,7 +18,7 @@
 
 
 __TITLE__ = "tizero"
-__VERSION__ = "v0.0.2"
+__VERSION__ = "v0.0.3"
 __DESCRIPTION__ = "Toolkit and Agents for Google Research Football"
 __AUTHOR__ = "OpenRL Contributors"
 __EMAIL__ = "huangshiyu@4paradigm.com"
