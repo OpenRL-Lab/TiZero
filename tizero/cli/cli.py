@@ -82,6 +82,40 @@ def run(ctx):
 
 
 @run.command()
+@click.option(
+    "--left_agent",
+    type=str,
+    help="left agent path",
+)
+@click.option(
+    "--right_agent",
+    type=str,
+    help="right agent path",
+)
+@click.option(
+    "--total_game",
+    type=int,
+    default=1,
+    help="total games to run",
+)
+@click.option(
+    "--game_length",
+    type=int,
+    default=3000,
+    help="max length of one game",
+)
+def eval(left_agent: str, right_agent: str, total_game: int, game_length: int):
+    from tizero.cli.evaluation import evaluation
+
+    evaluation(
+        left_agent=left_agent,
+        right_agent=right_agent,
+        total_game=total_game,
+        game_length=game_length,
+    )
+
+
+@run.command()
 @click.argument("input")
 @click.argument("output")
 @click.option(
@@ -109,4 +143,24 @@ def dump2video(input: str, output: str, episode_length: int, render_type: str):
         output=output,
         episode_length=episode_length,
         render_type=render_type,
+    )
+
+
+@run.command()
+@click.argument("input")
+def show(input: str):
+    from tizero.cli.show_dump import show_dump
+
+    show_dump(
+        dump_file=input,
+    )
+
+
+@run.command()
+@click.argument("input")
+def keypoint(input: str):
+    from tizero.cli.show_keypoint import show_keypoint
+
+    show_keypoint(
+        dump_file=input,
     )

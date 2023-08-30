@@ -137,7 +137,7 @@ class ScriptHelpers(object):
             time.sleep(0.5)
         avi_file = avi_files[0]
         # print('source avi file:',avi_file)
-        save_avi_path = save_dir / "{}.avi".format(file_name)
+        save_avi_path = save_dir / "{}_2d.avi".format(file_name)
         print("save video to {}".format(save_avi_path.resolve()))
 
         try_time = 0
@@ -195,6 +195,8 @@ class ScriptHelpers(object):
                 while not done:
                     _, _, done, _ = env.step([])
                     step += 1
+                    if step % 500 == 0:
+                        print("Step:", step)
             else:
                 for _ in tqdm(range(episode_length)):
                     _, _, done, _ = env.step([])

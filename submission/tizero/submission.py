@@ -70,12 +70,3 @@ def my_controller(obs_list, action_space_list, is_act_continuous=False):
     del obs_list['controlled_player_index']
     action = agent.get_action(obs_list,idx)
     return action
-
-def jidi_controller(obs_list=None):
-    if obs_list is None:
-        return
-    #重命名，防止加载错误
-    re = my_controller(obs_list,None)
-    assert isinstance(re,list)
-    assert isinstance(re[0],list)
-    return re

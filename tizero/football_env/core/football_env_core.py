@@ -140,6 +140,8 @@ class FootballEnvCore(object):
                 _unused_rendering_engine = self._env
                 _active_rendering = False
             else:
+                if _unused_engines is None:
+                    _unused_engines = []
                 _unused_engines.append(self._env)
             self._env = None
 
