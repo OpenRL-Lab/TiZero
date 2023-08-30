@@ -110,3 +110,21 @@ def dump2video(input: str, output: str, episode_length: int, render_type: str):
         episode_length=episode_length,
         render_type=render_type,
     )
+
+@run.command()
+@click.argument("input")
+def show(input: str):
+    from tizero.cli.show_dump import show_dump
+
+    show_dump(
+        dump_file=input,
+    )
+
+@run.command()
+@click.argument("input")
+def keypoint(input: str):
+    from tizero.cli.show_keypoint import show_keypoint
+
+    show_keypoint(
+        dump_file=input,
+    )

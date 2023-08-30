@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-<img height="300px" height="auto" src="./docs/figures/screen_800.png">
+<img weight="300px" height="auto" src="./docs/figures/screen_800.png">
 </div>
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -30,6 +30,25 @@ Code accompanying the paper
 - `pip install tizero` (or clone this repo and `pip install -e .`).
 - test the installation by `python3 -m gfootball.play_game --action_set=full`.
 
+### Evaluate JiDi submissions locally
+
+```commandline
+tizero eval submission_dir1 submission_dir2 --total_game 10 --
+```
+
+### Show a saved dump file
+
+- show detailed infomation of a match via: `tizero show dump_file`
+- show keypoints of a mactch via: `tizero keypoint dump_file`
+
+You can download an example dump file from [here](http://jidiai.cn/daily_6484285/daily_6484285.dump). 
+
+Then execute: `tizero show daily_6484285.dump` or `tizero keypoint daily_6484285`. Then you will see a GUI as below:
+
+<div align="center">
+<img weight="300px" height="auto" src="./docs/_static/images/show_dump.png">
+</div>
+
 ### Convert dump file to video
 
 After the installation, you can use tizero to convert a dump file to a video file.
@@ -42,7 +61,7 @@ Wait a minute, you will get a video file named `daily_6484285.avi` in your curre
 ### Submit TiZero to JIDI(及第评测平台)
 
 <div align="center">
-<img height="400px" height="auto" src="./docs/figures/jidi.png">
+<img width="400px" height="auto" src="./docs/figures/jidi.png">
 </div>
 
 
