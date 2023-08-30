@@ -26,15 +26,24 @@ Code accompanying the paper
 ### Installation
 
 - Follow the instructions in [gfootball](https://github.com/google-research/football#on-your-computer) to set up the environment.
-- `pip install gfootball`
+- `pip install gfootball openrl`
 - `pip install tizero` (or clone this repo and `pip install -e .`).
 - test the installation by `python3 -m gfootball.play_game --action_set=full`.
 
 ### Evaluate JiDi submissions locally
 
-```commandline
-tizero eval submission_dir1 submission_dir2 --total_game 10 --
+You can evaluate your agent locally using tizero:
+
+```bash
+tizero eval --left_agent submission_dir1 --right_agent submission_dir2 --total_game 10
 ```
+
+For example, you can evaluate tizero with random agent as below:
+
+```bash
+tizero eval --left_agent submission/tizero --right_agent submission/random_agent --total_game 10
+```
+
 
 ### Show a saved dump file
 

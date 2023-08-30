@@ -80,6 +80,38 @@ def run(ctx):
     else:
         pass
 
+@run.command()
+@click.option(
+    "--left_agent",
+    type=str,
+    help="left agent path",
+)
+@click.option(
+    "--right_agent",
+    type=str,
+    help="right agent path",
+)
+@click.option(
+    "--total_game",
+    type=int,
+    default=1,
+    help="total games to run",
+)
+@click.option(
+    "--game_length",
+    type=int,
+    default=3000,
+    help="max length of one game",
+)
+def eval(left_agent: str, right_agent: str, total_game: int, game_length: int):
+    from tizero.cli.evaluation import evaluation
+
+    evaluation(
+        left_agent=left_agent,
+        right_agent=right_agent,
+        total_game=total_game,
+        game_length=game_length,
+    )
 
 @run.command()
 @click.argument("input")

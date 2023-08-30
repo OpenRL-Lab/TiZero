@@ -33,6 +33,7 @@ def get_install_requires() -> list:
         "lz4",
         "six",
         "tqdm",
+        "openrl",
     ]
 
 

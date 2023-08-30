@@ -15,7 +15,7 @@
 # limitations under the License.
 
 import numpy as np
-from tmarl.envs.football import football_env
+from tizero import football_env
 
 """"""
 # Actions.
