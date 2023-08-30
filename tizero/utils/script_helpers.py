@@ -195,8 +195,8 @@ class ScriptHelpers(object):
                 while not done:
                     _, _, done, _ = env.step([])
                     step += 1
-                    if step%500 == 0:
-                        print("Step:",step)
+                    if step % 500 == 0:
+                        print("Step:", step)
             else:
                 for _ in tqdm(range(episode_length)):
                     _, _, done, _ = env.step([])

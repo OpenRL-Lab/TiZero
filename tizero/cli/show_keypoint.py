@@ -17,8 +17,10 @@
 """"""
 from pathlib import Path
 
-from tizero.utils.visualize_tools.tools.tracer import MatchTracer
 from tizero.utils.visualize_tools.game_graph.game_graph import GameGraph
+from tizero.utils.visualize_tools.tools.tracer import MatchTracer
+
+
 def show_keypoint(dump_file):
     assert Path(dump_file).exists()
 

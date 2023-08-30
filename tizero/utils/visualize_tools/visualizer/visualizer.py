@@ -11,28 +11,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import tkinter as tk
+import copy
+import io
 import json
 import os
+import pprint
+import tkinter as tk
 from functools import partial
-
-from numpy import ndarray
+from tkinter import ttk
+from tkinter.messagebox import showerror, showinfo, showwarning
+from tkinter.scrolledtext import ScrolledText
 
 import numpy as np
-from PIL import Image, ImageTk
-from tkinter.messagebox import showerror, showwarning, showinfo
-from tkinter import ttk
 import pandas as pd
-from .translation_en import *
-from .team_info_table import TeamInfoTable
-from .raw_drawer import RawDrawer
-from .ball_info_table import BallInfoTable
-from tkinter.scrolledtext import ScrolledText
-import pprint
-import json
 import tree
-import io
-import copy
+from numpy import ndarray
+from PIL import Image, ImageTk
+
+from .ball_info_table import BallInfoTable
+from .raw_drawer import RawDrawer
+from .team_info_table import TeamInfoTable
+from .translation_en import *
 
 
 class Visualizer:

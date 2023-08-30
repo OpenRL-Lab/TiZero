@@ -80,6 +80,7 @@ def run(ctx):
     else:
         pass
 
+
 @run.command()
 @click.option(
     "--left_agent",
@@ -113,6 +114,7 @@ def eval(left_agent: str, right_agent: str, total_game: int, game_length: int):
         game_length=game_length,
     )
 
+
 @run.command()
 @click.argument("input")
 @click.argument("output")
@@ -143,6 +145,7 @@ def dump2video(input: str, output: str, episode_length: int, render_type: str):
         render_type=render_type,
     )
 
+
 @run.command()
 @click.argument("input")
 def show(input: str):
@@ -151,6 +154,7 @@ def show(input: str):
     show_dump(
         dump_file=input,
     )
+
 
 @run.command()
 @click.argument("input")

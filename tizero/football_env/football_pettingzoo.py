@@ -26,6 +26,7 @@ from pettingzoo.utils import agent_selector
 
 from tizero.football_env.football_jidi_eval import FootballJiDiEnv
 
+
 class FootballAECEnv(AECEnv):
     metadata = {"render.modes": ["human"], "name": "GFootball"}
 
@@ -142,14 +143,13 @@ class FootballAECEnv(AECEnv):
     def num_agents(self):
         return len(self.possible_agents)
 
-    def sample_action(self,player_name):
+    def sample_action(self, player_name):
         self.player_action_space = self.action_space(player_name)
-        if isinstance(self.player_action_space,list):
+        if isinstance(self.player_action_space, list):
             action = []
             for space in self.player_action_space:
                 action.append(space.sample())
 
         else:
-            action =self.player_action_space.sample()
+            action = self.player_action_space.sample()
         return action
-

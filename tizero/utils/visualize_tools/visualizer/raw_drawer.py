@@ -11,16 +11,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import tkinter as tk
 import json
 import os
+import tkinter as tk
 from functools import partial
+from tkinter import ttk
+from tkinter.messagebox import showerror, showinfo, showwarning
 
 import numpy as np
-from PIL import Image, ImageTk
-from tkinter.messagebox import showerror, showwarning, showinfo
-from tkinter import ttk
 import pandas as pd
+from PIL import Image, ImageTk
+
 from .translation_en import *
 
 
@@ -108,8 +109,9 @@ class RawDrawer:
         x, y, z = obs["ball"]
         dx, dy, dz = obs["ball_direction"]
         rx, ry, rz = obs["ball_rotation"]
-        s = "p:{:.2e},{:.2e},{:.2e}\nd:{:.2e},{:.2e},{:.2e}\nr:{:.2e},{:.2e},{:.2e}".format(
-            x, y, z, dx, dy, dz, rx, ry, rz
+        s = (
+            "p:{:.2e},{:.2e},{:.2e}\nd:{:.2e},{:.2e},{:.2e}\nr:{:.2e},{:.2e},{:.2e}"
+            .format(x, y, z, dx, dy, dz, rx, ry, rz)
         )
         # ix=max(50+self.x_off,min(self.pitch_width_frame-50+self.x_off,self.tx(x)+self.info_x_off))
         # iy=max(50+self.y_off,min(self.pitch_height_frame-50+self.y_off,self.ty(y)+self.info_y_off))

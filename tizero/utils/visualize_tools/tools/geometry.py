@@ -12,8 +12,9 @@
 # limitations under the License.
 
 import numpy as np
-from . import action_set
 import scipy.spatial as spatial
+
+from . import action_set
 
 XSCALE = 54.4
 YSCALE = 83.6

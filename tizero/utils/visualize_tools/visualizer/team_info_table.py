@@ -11,19 +11,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import tkinter as tk
 import json
 import os
+import tkinter as tk
 from functools import partial
+from tkinter import ttk
+from tkinter.messagebox import showerror, showinfo, showwarning
 
 import numpy as np
-from PIL import Image, ImageTk
-from tkinter.messagebox import showerror, showwarning, showinfo
-from tkinter import ttk
 import pandas as pd
-from .translation_en import *
+from PIL import Image, ImageTk
 
 from tizero.utils.visualize_tools.tools import geometry
+
+from .translation_en import *
 
 
 class TeamInfoTable(ttk.Treeview):

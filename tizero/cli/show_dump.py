@@ -19,6 +19,8 @@ from pathlib import Path
 
 from tizero.utils.visualize_tools.tools.tracer import MatchTracer
 from tizero.utils.visualize_tools.visualizer import Visualizer
+
+
 def show_dump(dump_file):
     assert Path(dump_file).exists()
 

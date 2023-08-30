@@ -11,9 +11,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import pickle
-from PIL import Image
 import io
+import pickle
+
+from PIL import Image
 
 
 class MatchTracer:

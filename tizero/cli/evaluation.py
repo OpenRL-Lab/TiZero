@@ -15,19 +15,23 @@
 # limitations under the License.
 
 """"""
-from typing import Optional,List,Dict
+from typing import Dict, List, Optional
 
 import numpy as np
-from openrl.envs.wrappers.pettingzoo_wrappers import RecordWinner
-from openrl.arena.agents.jidi_agent import JiDiAgent
 from openrl.arena import make_arena
+from openrl.arena.agents.jidi_agent import JiDiAgent
 from openrl.envs.PettingZoo.registration import register
+from openrl.envs.wrappers.pettingzoo_wrappers import RecordWinner
+
 from tizero.football_env.football_pettingzoo import FootballAECEnv
+
 register("GFootball/11_vs_11_jidi_eval", FootballAECEnv)
+
+
 def fix_dispatch_func(
-        np_random: np.random.Generator,
-        players: List[str],
-        agent_names: List[str],
+    np_random: np.random.Generator,
+    players: List[str],
+    agent_names: List[str],
 ) -> Dict[str, str]:
     assert len(players) == len(
         agent_names
@@ -35,14 +39,20 @@ def fix_dispatch_func(
     assert len(players) == 2, "The number of players must be equal to 2."
     return dict(zip(players, agent_names))
 
-def evaluation(left_agent: str, right_agent: str, total_game: int, game_length: int,parallel:Optional[bool]=True,max_game_onetime:int=2,seed:int=0):
 
+def evaluation(
+    left_agent: str,
+    right_agent: str,
+    total_game: int,
+    game_length: int,
+    parallel: Optional[bool] = True,
+    max_game_onetime: int = 2,
+    seed: int = 0,
+):
     env_wrappers = [RecordWinner]
 
-    arena = make_arena(
-        "GFootball/11_vs_11_jidi_eval", env_wrappers=env_wrappers
-    )
-    player_num  =11
+    arena = make_arena("GFootball/11_vs_11_jidi_eval", env_wrappers=env_wrappers)
+    player_num = 11
     left_agent = JiDiAgent(left_agent, player_num=player_num)
     right_agent = JiDiAgent(right_agent, player_num=player_num)
 
@@ -51,10 +61,9 @@ def evaluation(left_agent: str, right_agent: str, total_game: int, game_length: 
         total_games=total_game,
         max_game_onetime=max_game_onetime,
         seed=seed,
-        dispatch_func = fix_dispatch_func,
-
+        dispatch_func=fix_dispatch_func,
     )
-    parallel=True
+    parallel = True
     result = arena.run(parallel=parallel)
     arena.close()
     print(result)

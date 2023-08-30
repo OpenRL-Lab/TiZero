@@ -13,12 +13,12 @@
 
 
 import numpy as np
-from .data_structure import Node, Chain, Subgame
 
-from tizero.utils.visualize_tools.tools.tracer import MatchTracer
 from tizero.utils.visualize_tools.tools import geometry as g
+from tizero.utils.visualize_tools.tools.tracer import MatchTracer
 
-from .event import GoalEvent, PassingEvent, InterceptingBallEvent, LosingBallEvent
+from .data_structure import Chain, Node, Subgame
+from .event import GoalEvent, InterceptingBallEvent, LosingBallEvent, PassingEvent
 
 DEBUG = False
 
@@ -135,7 +135,6 @@ class GameGraph:
             return owned_team, idx
 
     def build(self, game):
-
         # get nodes
         last_owned_team = None
         last_owned_player = None
@@ -218,9 +217,9 @@ class GameGraph:
                             )
                             if self.data[node.s_step]["game_mode"] == 0:
                                 # directly intercept...
-                                self.intercepting_balls[
-                                    node.s_step
-                                ] = InterceptingBallEvent(node.s_step, node)
+                                self.intercepting_balls[node.s_step] = (
+                                    InterceptingBallEvent(node.s_step, node)
+                                )
                             else:
                                 # game mode changes...
                                 pass
