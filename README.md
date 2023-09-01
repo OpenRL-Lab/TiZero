@@ -26,7 +26,7 @@ Code accompanying the paper
 ### Installation
 
 - Follow the instructions in [gfootball](https://github.com/google-research/football#on-your-computer) to set up the environment.
-- `pip install gfootball openrl`
+- `pip install gfootball openrl "openrl[selfplay]"`
 - `pip install tizero` (or clone this repo and `pip install -e .`).
 - test the installation by `python3 -m gfootball.play_game --action_set=full`.
 
@@ -52,7 +52,7 @@ tizero eval --left_agent submission/tizero --right_agent submission/random_agent
 
 You can download an example dump file from [here](http://jidiai.cn/daily_6484285/daily_6484285.dump). 
 
-Then execute: `tizero show daily_6484285.dump` or `tizero keypoint daily_6484285`. Then you will see a GUI as below:
+Then execute: `tizero show daily_6484285.dump` or `tizero keypoint daily_6484285.dump`. Then you will see a GUI as below:
 
 <div align="center">
 <img weight="300px" height="auto" src="./docs/_static/images/show_dump.png">

@@ -30,11 +30,15 @@ from tizero.football_env.football_jidi_eval import FootballJiDiEnv
 class FootballAECEnv(AECEnv):
     metadata = {"render.modes": ["human"], "name": "GFootball"}
 
+    @property
+    def agent_num(self):
+        return self.player_each_side
     def __init__(self, render_mode: Optional[str] = None, id: str = None):
         self.env = FootballJiDiEnv(scenario_name=id.split("/")[-1])
 
         agent_num = len(self.possible_agents)
         player_each_side = 11
+        self.player_each_side = player_each_side
         self.agent_name_to_slice = dict(
             zip(
                 self.possible_agents,
