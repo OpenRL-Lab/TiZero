@@ -47,7 +47,9 @@ You can download an example dump file from `here <http://jidiai.cn/daily_6484285
 
 Then execute: ``tizero show daily_6484285.dump`` or ``tizero keypoint daily_6484285.dump`` . Then you will see a GUI as below:
 
-
+.. image:: _static/images/show_dump.png
+     :width: 1000
+     :align: center
 
 
 Convert dump file to video
