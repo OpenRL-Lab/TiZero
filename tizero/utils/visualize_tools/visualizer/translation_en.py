@@ -11,62 +11,145 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TEAMS = lambda x: [
-    "left",  # left
-    "right",  # right
-    "none",  # free
-][x]
+# TEAMS = lambda x: [
+#     "left",  # left
+#     "right",  # right
+#     "none",  # free
+# ][x]
 
-ROLES = lambda x: ["GK", "CB", "LB", "RB", "DM", "CM", "LM", "RM", "AM", "CF"][x]
 
-SIMPLE_ROLES = lambda x: ["G", "c", "l", "r", "D", "C", "L", "R", "A", "F"][x]
+def TEAMS(x):
+    return [
+        "left",  # left
+        "right",  # right
+        "none",  # free
+    ][x]
 
-GAME_MODES = lambda x: [
-    "normal",
-    "kick off",
-    "goal kick",
-    "free kick",
-    "corner",
-    "throw-in",
-    "penalty",
-][x]
 
-ACTIONS = lambda x: [
-    "none",
-    "\u2190",  # 左 1
-    "\u2196",  # 上左
-    "\u2191",  # 上
-    "\u2197",  # 上右
-    "\u2192",  # 右
-    "\u2198",  # 下右
-    "\u2193",  # 下
-    "\u2199",  # 下左 8
-    "long pass",  # 9
-    "high pass",  # 10
-    "short pass",  # 11
-    "shot",  # 12
-    "sprint",  # 13
-    "no direction",  # 14
-    "no sprint",  # 15
-    "slide",  # 16
-    "dribble",  # 17
-    "no dribble",  # 18
-    "built-in ai",  # 19
-    "-",  # not controlled
-][x]
+# ROLES = lambda x: ["GK", "CB", "LB", "RB", "DM", "CM", "LM", "RM", "AM", "CF"][x]
 
-DIRECTIONS = lambda x: [
-    "\u2190",  # 左
-    "\u2196",  # 上左
-    "\u2191",  # 上
-    "\u2197",  # 上右
-    "\u2192",  # 右
-    "\u2198",  # 下右
-    "\u2193",  # 下
-    "\u2199",  # 下左
-    "-",
-][x]
 
-INSTRUCTIONS = lambda x: ["RUN", "PASS", "SHOT", "SLIDE"][x]
+def ROLES(x):
+    return ["GK", "CB", "LB", "RB", "DM", "CM", "LM", "RM", "AM", "CF"][x]
 
-USE_NEW_INSTRUCTIONS = lambda x: ["OLD", "NEW"][x]
+
+# SIMPLE_ROLES = lambda x: ["G", "c", "l", "r", "D", "C", "L", "R", "A", "F"][x]
+
+
+def SIMPLE_ROLES(x):
+    return ["G", "c", "l", "r", "D", "C", "L", "R", "A", "F"][x]
+
+
+# GAME_MODES = lambda x: [
+#     "normal",
+#     "kick off",
+#     "goal kick",
+#     "free kick",
+#     "corner",
+#     "throw-in",
+#     "penalty",
+# ][x]
+
+
+def GAME_MODES(x):
+    return [
+        "normal",
+        "kick off",
+        "goal kick",
+        "free kick",
+        "corner",
+        "throw-in",
+        "penalty",
+    ][x]
+
+
+# ACTIONS = lambda x: [
+#     "none",
+#     "\u2190",  # 左 1
+#     "\u2196",  # 上左
+#     "\u2191",  # 上
+#     "\u2197",  # 上右
+#     "\u2192",  # 右
+#     "\u2198",  # 下右
+#     "\u2193",  # 下
+#     "\u2199",  # 下左 8
+#     "long pass",  # 9
+#     "high pass",  # 10
+#     "short pass",  # 11
+#     "shot",  # 12
+#     "sprint",  # 13
+#     "no direction",  # 14
+#     "no sprint",  # 15
+#     "slide",  # 16
+#     "dribble",  # 17
+#     "no dribble",  # 18
+#     "built-in ai",  # 19
+#     "-",  # not controlled
+# ][x]
+
+
+def ACTIONS(x):
+    return [
+        "none",
+        "\u2190",  # 左 1
+        "\u2196",  # 上左
+        "\u2191",  # 上
+        "\u2197",  # 上右
+        "\u2192",  # 右
+        "\u2198",  # 下右
+        "\u2193",  # 下
+        "\u2199",  # 下左 8
+        "long pass",  # 9
+        "high pass",  # 10
+        "short pass",  # 11
+        "shot",  # 12
+        "sprint",  # 13
+        "no direction",  # 14
+        "no sprint",  # 15
+        "slide",  # 16
+        "dribble",  # 17
+        "no dribble",  # 18
+        "built-in ai",  # 19
+        "-",  # not controlled
+    ][x]
+
+
+# DIRECTIONS = lambda x: [
+#     "\u2190",  # 左
+#     "\u2196",  # 上左
+#     "\u2191",  # 上
+#     "\u2197",  # 上右
+#     "\u2192",  # 右
+#     "\u2198",  # 下右
+#     "\u2193",  # 下
+#     "\u2199",  # 下左
+#     "-",
+# ][x]
+
+
+def DIRECTIONS(x):
+    return [
+        "\u2190",  # 左
+        "\u2196",  # 上左
+        "\u2191",  # 上
+        "\u2197",  # 上右
+        "\u2192",  # 右
+        "\u2198",  # 下右
+        "\u2193",  # 下
+        "\u2199",  # 下左
+        "-",
+    ][x]
+
+
+# INSTRUCTIONS = lambda x: ["RUN", "PASS", "SHOT", "SLIDE"][x]
+
+
+def INSTRUCTIONS(x):
+    return ["RUN", "PASS", "SHOT", "SLIDE"][x]
+
+
+# USE_NEW_INSTRUCTIONS = lambda x: ["OLD", "NEW"][x]
+
+
+def USE_NEW_INSTRUCTIONS(x):
+    return ["OLD", "NEW"][x]

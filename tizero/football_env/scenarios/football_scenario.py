@@ -140,8 +140,8 @@ def test_scenario():
     for i in range(200):
         obs = raw_o[0]
         active_position = obs["left_team"][obs["active"]]
-        sticky_actions = obs["sticky_actions"][:10]
-        active_direction = obs["left_team_direction"][obs["active"]]
+        # sticky_actions = obs["sticky_actions"][:10]
+        # active_direction = obs["left_team_direction"][obs["active"]]
         relative_ball_position = obs["ball"][:2] - active_position
         all_directions_vecs = [
             np.array(v) / np.linalg.norm(np.array(v)) for v in ALL_DIRECTION_VECS

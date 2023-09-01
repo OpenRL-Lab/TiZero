@@ -5,7 +5,7 @@ def raw_env():
     from tizero.football_env.football_jidi_eval import FootballJiDiEnv
 
     env = FootballJiDiEnv("11_vs_11_jidi_eval")
-    reset_obs = env.reset()
+    env.reset()
 
     single_action = np.zeros(20)
     single_action[-1] = 1

@@ -12,9 +12,45 @@ Installation
 ____________
 
 * Follow the instructions in `gfootball <https://github.com/google-research/football#on-your-computer>`_ to set up the environment.
-* ``pip install gfootball``
+* ``pip install gfootball openrl "openrl[selfplay]"``
 * ``pip install tizero`` (or clone this repo and ``pip install -e .`` ).
 * test the installation by ``python3 -m gfootball.play_game --action_set=full`` .
+
+
+Evaluate JiDi submissions locally
+____________
+
+You can evaluate your agent locally using tizero:
+
+.. code-block:: bash
+
+    tizero eval --left_agent submission_dir1 --right_agent submission_dir2 --total_game 10
+
+
+For example, you can evaluate tizero with random agent as below:
+
+.. code-block:: bash
+
+    tizero eval --left_agent submission/tizero --right_agent submission/random_agent --total_game 10
+
+
+For evaluations for JiDi submissions on other games, please refer to the `Arena <https://openrl-docs.readthedocs.io/en/latest/arena/index.html>`_ of OpenRL
+and this `example <https://github.com/OpenRL-Lab/openrl/tree/main/examples/snake>`_ for the snake game.
+
+Show a saved dump file
+____________
+
+* show detailed infomation of a match via: ``tizero show dump_file``
+* show keypoints of a mactch via: ``tizero keypoint dump_file``
+
+You can download an example dump file from `here <http://jidiai.cn/daily_6484285/daily_6484285.dump>`_.
+
+Then execute: ``tizero show daily_6484285.dump`` or ``tizero keypoint daily_6484285.dump`` . Then you will see a GUI as below:
+
+.. image::
+     _static/images/show_dump.png
+     :width: 1000
+     :align: center
 
 
 Convert dump file to video

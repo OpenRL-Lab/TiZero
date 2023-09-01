@@ -82,15 +82,15 @@ class ScriptHelpers(object):
                     return dump
                 dump.append(step)
 
-    def dump_to_txt(self, dump_file, output, include_debug):
-        with open(output, "w") as out_fd:
-            dump = self.load_dump(dump_file)
-        if not include_debug:
-            for s in dump:
-                if "debug" in s:
-                    del s["debug"]
-        with open(output, "w") as f:
-            f.write(str(dump))
+    # def dump_to_txt(self, dump_file, output, include_debug):
+    #     with open(output, "w") as out_fd:
+    #         dump = self.load_dump(dump_file)
+    #     if not include_debug:
+    #         for s in dump:
+    #             if "debug" in s:
+    #                 del s["debug"]
+    #     with open(output, "w") as f:
+    #         f.write(str(dump))
 
     def dump_to_video(self, dump_file, directory=None, episode_length=None):
         dump_path = Path(dump_file)
@@ -124,7 +124,7 @@ class ScriptHelpers(object):
                 processor.update(dump[step])
 
         del processor
-        processor = None
+        # processor = None
 
         avi_files = []
         try_time = 0

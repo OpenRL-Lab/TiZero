@@ -44,6 +44,8 @@ For example, you can evaluate tizero with random agent as below:
 tizero eval --left_agent submission/tizero --right_agent submission/random_agent --total_game 10
 ```
 
+For evaluations for JiDi submissions on other games, please refer to the [Arena](https://openrl-docs.readthedocs.io/en/latest/arena/index.html) of OpenRL 
+and this [example](https://github.com/OpenRL-Lab/openrl/tree/main/examples/snake) for the snake game.
 
 ### Show a saved dump file
 
