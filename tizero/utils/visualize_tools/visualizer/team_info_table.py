@@ -110,10 +110,10 @@ class TeamInfoTable(ttk.Treeview):
 
         if team == "left":
             roles = self.left_team_roles
-            n = self.n_left
+            # n = self.n_left
         else:
             roles = self.right_team_roles
-            n = self.n_right
+            # n = self.n_right
 
         roles = [SIMPLE_ROLES(r) + str(idx) for idx, r in enumerate(roles)]
 

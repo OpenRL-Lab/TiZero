@@ -33,6 +33,7 @@ class FootballAECEnv(AECEnv):
     @property
     def agent_num(self):
         return self.player_each_side
+
     def __init__(self, render_mode: Optional[str] = None, id: str = None):
         self.env = FootballJiDiEnv(scenario_name=id.split("/")[-1])
 

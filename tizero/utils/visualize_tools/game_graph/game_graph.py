@@ -286,9 +286,9 @@ class GameGraph:
     def e_step(self):
         return self.subgames[-1].e_step if len(self) > 0 else None
 
-    @property
-    def n_steps(self):
-        return self.e_step - self.s_step + 1
+    # @property
+    # def n_steps(self):
+    #     return self.e_step - self.s_step + 1
 
     @property
     def n_left(self):

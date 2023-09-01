@@ -89,7 +89,7 @@ class FootballJiDiEnv(MultiAgentEnv):
 
     def add_control_index(self, raw_obs):
         for i, o in enumerate(raw_obs):
-            if not "controlled_player_index" in o:
+            if "controlled_player_index" not in o:
                 o["controlled_player_index"] = i % 11
         return raw_obs
 
