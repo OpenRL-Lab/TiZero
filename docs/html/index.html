@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to TiZero! &mdash; TiZero v0.0.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/documentation_options.js?v=bc6a6d3b"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+        <script src="_static/js/copybutton.js?v=7db002fe"></script>
+        <script src="_static/js/benchmark.js?v=1091b9f3"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            TiZero
+              <img src="_static/TiZero-logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                v0.0.3
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to TiZero!</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#evaluate-jidi-submissions-locally">Evaluate JiDi submissions locally</a></li>
+<li><a class="reference internal" href="#show-a-saved-dump-file">Show a saved dump file</a></li>
+<li><a class="reference internal" href="#convert-dump-file-to-video">Convert dump file to video</a><ul>
+<li><a class="reference internal" href="#submit-tizero-to-jidi">Submit TiZero to JIDI(及第评测平台)</a></li>
+<li><a class="reference internal" href="#citing-tizero">Citing TiZero</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">TiZero</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to TiZero!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-tizero">
+<h1>Welcome to TiZero!<a class="headerlink" href="#welcome-to-tizero" title="Link to this heading">¶</a></h1>
+<p>Reinforcement learning agent for Google Research Football.</p>
+<p>Code accompanying the paper
+“TiZero: Mastering Multi-Agent Football with Curriculum Learning and Self-Play” (AAMAS 2023).</p>
+<p>[ <a class="reference external" href="https://github.com/OpenRL-Lab/TiZero">GitHub</a> ] [ <a class="reference external" href="https://arxiv.org/abs/2302.07515">paper</a> ] [ <a class="reference external" href="https://www.youtube.com/watch?v=U9REh0otmVU">videos</a> ].</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Follow the instructions in <a class="reference external" href="https://github.com/google-research/football#on-your-computer">gfootball</a> to set up the environment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">gfootball</span> <span class="pre">openrl</span> <span class="pre">&quot;openrl[selfplay]&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tizero</span></code> (or clone this repo and <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> ).</p></li>
+<li><p>test the installation by <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">gfootball.play_game</span> <span class="pre">--action_set=full</span></code> .</p></li>
+</ul>
+</section>
+<section id="evaluate-jidi-submissions-locally">
+<h2>Evaluate JiDi submissions locally<a class="headerlink" href="#evaluate-jidi-submissions-locally" title="Link to this heading">¶</a></h2>
+<p>You can evaluate your agent locally using tizero:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tizero<span class="w"> </span><span class="nb">eval</span><span class="w"> </span>--left_agent<span class="w"> </span>submission_dir1<span class="w"> </span>--right_agent<span class="w"> </span>submission_dir2<span class="w"> </span>--total_game<span class="w"> </span><span class="m">10</span>
+</pre></div>
+</div>
+<p>For example, you can evaluate tizero with random agent as below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tizero<span class="w"> </span><span class="nb">eval</span><span class="w"> </span>--left_agent<span class="w"> </span>submission/tizero<span class="w"> </span>--right_agent<span class="w"> </span>submission/random_agent<span class="w"> </span>--total_game<span class="w"> </span><span class="m">10</span>
+</pre></div>
+</div>
+<p>For evaluations for JiDi submissions on other games, please refer to the <a class="reference external" href="https://openrl-docs.readthedocs.io/en/latest/arena/index.html">Arena</a> of OpenRL
+and this <a class="reference external" href="https://github.com/OpenRL-Lab/openrl/tree/main/examples/snake">example</a> for the snake game.</p>
+</section>
+<section id="show-a-saved-dump-file">
+<h2>Show a saved dump file<a class="headerlink" href="#show-a-saved-dump-file" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>show detailed infomation of a match via: <code class="docutils literal notranslate"><span class="pre">tizero</span> <span class="pre">show</span> <span class="pre">dump_file</span></code></p></li>
+<li><p>show keypoints of a mactch via: <code class="docutils literal notranslate"><span class="pre">tizero</span> <span class="pre">keypoint</span> <span class="pre">dump_file</span></code></p></li>
+</ul>
+<p>You can download an example dump file from <a class="reference external" href="http://jidiai.cn/daily_6484285/daily_6484285.dump">here</a>.</p>
+<p>Then execute: <code class="docutils literal notranslate"><span class="pre">tizero</span> <span class="pre">show</span> <span class="pre">daily_6484285.dump</span></code> or <code class="docutils literal notranslate"><span class="pre">tizero</span> <span class="pre">keypoint</span> <span class="pre">daily_6484285.dump</span></code> . Then you will see a GUI as below:</p>
+<a class="reference internal image-reference" href="_images/show_dump.png"><img alt="_images/show_dump.png" class="align-center" src="_images/show_dump.png" style="width: 1000px;" /></a>
+</section>
+<section id="convert-dump-file-to-video">
+<h2>Convert dump file to video<a class="headerlink" href="#convert-dump-file-to-video" title="Link to this heading">¶</a></h2>
+<p>After the installation, you can use tizero to convert a dump file to a video file.
+The usage is <code class="docutils literal notranslate"><span class="pre">tizero</span> <span class="pre">dump2video</span> <span class="pre">&lt;dump_file&gt;</span> <span class="pre">&lt;output_dir&gt;</span> <span class="pre">--episode_length</span> <span class="pre">&lt;the</span> <span class="pre">length&gt;</span> <span class="pre">--render_type</span> <span class="pre">&lt;2d/3d&gt;</span></code> .</p>
+<p>You can download an example dump file from <a class="reference external" href="http://jidiai.cn/daily_6484285/daily_6484285.dump">here</a> .
+And then execute <code class="docutils literal notranslate"><span class="pre">tizero</span> <span class="pre">dump2video</span> <span class="pre">daily_6484285.dump</span> <span class="pre">./</span></code> in your terminal. By default, the episode length is 3000 and the render type is 2d.
+Wait a minute, you will get a video file named <code class="docutils literal notranslate"><span class="pre">daily_6484285.avi</span></code> in your current directory.</p>
+<section id="submit-tizero-to-jidi">
+<h3>Submit TiZero to JIDI(及第评测平台)<a class="headerlink" href="#submit-tizero-to-jidi" title="Link to this heading">¶</a></h3>
+<p>JIDI is a public evaluation platform for RL agents. You can submit your agent of GRF at: <a class="reference external" href="http://www.jidiai.cn/env_detail?envid=34">http://www.jidiai.cn/env_detail?envid=34</a> .</p>
+<p>We provide several agents under <a class="reference external" href="https://github.com/OpenRL-Lab/TiZero/tree/main/submission">./submission/</a> directory,  which can be submitted to JIDI directly:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/OpenRL-Lab/TiZero/tree/main/submission/tizero">./submission/tizero</a> : the final model of TiZero for JIDI submission, which ranked 1st on October 28th, 2022.</p></li>
+<li><p><a class="reference external" href="https://github.com/OpenRL-Lab/TiZero/tree/main/submission/random_agent">./submission/random_agent</a> : the random agent for JIDI submission.</p></li>
+</ul>
+</section>
+<section id="citing-tizero">
+<h3>Citing TiZero<a class="headerlink" href="#citing-tizero" title="Link to this heading">¶</a></h3>
+<p>If our work has been helpful to you, please feel free to cite us:</p>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">lin2023tizero</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{TiZero: Mastering Multi-Agent Football with Curriculum Learning and Self-Play}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Lin, Fanqi and Huang, Shiyu and Pearce, Tim and Chen, Wenze and Tu, Wei-Wei}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{arXiv preprint arXiv:2302.07515}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2023}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, OpenRL contributors..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
