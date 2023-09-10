@@ -79,9 +79,10 @@ If our work has been helpful to you, please feel free to cite us:
 
 .. code-block:: bibtex
 
-    @article{lin2023tizero,
+    @inproceedings{lin2023tizero,
       title={TiZero: Mastering Multi-Agent Football with Curriculum Learning and Self-Play},
       author={Lin, Fanqi and Huang, Shiyu and Pearce, Tim and Chen, Wenze and Tu, Wei-Wei},
-      journal={arXiv preprint arXiv:2302.07515},
+      booktitle={Proceedings of the 2023 International Conference on Autonomous Agents and Multiagent Systems},
+      pages={67--76},
       year={2023}
     }
